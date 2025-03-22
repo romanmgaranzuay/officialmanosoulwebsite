@@ -1,0 +1,143 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    background-image: url('../images/Desktop-1.png');
+    background-size: cover; /* Ensure the height always matches the viewport */
+    background-position: top center; /* Align the top of the image with the top of the viewport */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-attachment: fixed; /* Keep the image fixed */
+    height: 100vh; /* Set the height to the viewport height */
+}
+
+/* .content {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } */
+
+/* Default content for large screens (above 700px) */
+.large-screen-content {
+    display: block; /* Show this on larger screens */
+}
+
+.mobile-content {
+    display: none; /* Hide mobile content by default */
+}
+
+/* Positioning for buttons on larger screens */
+.invisible-streaming-button {
+    background: transparent;
+    border: none;
+    width: 10vw;
+    height: 29vh;
+    cursor: pointer;
+    position: fixed;
+}
+
+#button1 { top: 4vh; left: 16.5vw; }
+#button2 { top: 4vh; left: 28vw; }
+#button3 { top: 4vh; left: 62.2vw; }
+#button4 { top: 4vh; left: 73.55vw; }
+
+/* Social buttons */
+.invisible-socials-button {
+    background: transparent;
+    border: none;
+    width: 7.5vw;
+    height: 16vh;
+    cursor: pointer;
+    position: absolute;
+}
+
+#sbutton1 { top: 35.5vh; left: 17.75vw; }
+#sbutton2 { top: 35.5vh; left: 29.5vw; }
+#sbutton3 { top: 35vh; left: 63.5vw; }
+#sbutton4 { top: 34.75vh; left: 74.7vw; }
+
+/* FFM Button */
+.invisible-ffm-button {
+    background: transparent;
+    border: none;
+    width: 10vw;
+    height: 16vh;
+    cursor: pointer;
+    position: absolute;
+}
+
+#ffmbutton1 { top: 55vh; left: 77.5vw; }
+
+@media (max-width: 768px) {
+    
+    /* Default content for large screens (above 700px) */
+    .large-screen-content {
+        display: none; /* Show this on larger screens */
+    }
+
+    .mobile-content {
+        display: block; /* Hide mobile content by default */
+    }
+
+    .invisible-streaming-button,
+    .invisible-socials-button,
+    .invisible-ffm-button {
+        display: none;
+    }
+
+    body {
+        background-image: url('../images/iPhone 16 - 1.png');
+        background-size: cover; /* Ensure the height always matches the viewport */
+        background-position: top center; /* Align the top of the image with the top of the viewport */
+        background-repeat: no-repeat; /* Prevent tiling */
+        background-attachment: fixed; /* Keep the image fixed */
+        height: 100vh; /* Set the height to the viewport height */
+    }
+
+    .mobile-streaming-button {
+        background: transparent;
+        border: none;
+        width: 18vw;
+        height: 15vh;
+        cursor: pointer;
+        position: fixed;
+    }
+
+    #mbutton1 { top: 11vh; left: 11vw; }
+    #mbutton2 { top: 11vh; left: 31vw; }
+    #mbutton3 { top: 11vh; left: 51vw; }
+    #mbutton4 { top: 11vh; left: 71.5vw; }
+
+    .mobile-socials-button {
+        background: transparent;
+        border: none;
+        width: 11vw;
+        height: 7vh;
+        cursor: pointer;
+        position: absolute;
+    }
+    
+    #msbutton1 { top: 57.5vh; left: 12vw; }
+    #msbutton2 { top: 47.5vh; left: 12vw; }
+    #msbutton3 { top: 57.5vh; left: 76vw; }
+    #msbutton4 { top: 47.5vh; left: 76vw; }
+    
+    .mobile-ffm-button {
+        background: transparent;
+        border: none;
+        width: 40vw;
+        height: 16vh;
+        cursor: pointer;
+        position: absolute;
+    }
+    
+    #mffmbutton1 { top: 29vh; left: 28vw; }
+}
