@@ -16,6 +16,15 @@ body {
     height: 100vh; /* Set the height to the viewport height */
 }
 
+#mailerlite-form-container {
+    box-sizing: border-box;
+    display: table;
+    margin: auto auto;
+    bottom: 20px;
+    position: fixed;
+    width: 100% !important;
+} 
+
 /* Default content for large screens (above 700px) */
 .large-screen-content {
     display: block; /* Show this on larger screens */
