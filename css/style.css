@@ -19,8 +19,7 @@ body {
 #mailerlite-form-container {
     box-sizing: border-box;
     display: table;
-    margin: auto auto;
-    bottom: 20px;
+    bottom: 20px !important;
     position: fixed;
     width: 100% !important;
 } 
