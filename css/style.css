@@ -22,7 +22,7 @@ body {
     top: auto;
     bottom: 20px !important;
     position: fixed;
-    width: 95% !important;
+    width: 100% !important;
 } 
 
 /* Default content for large screens (above 700px) */
