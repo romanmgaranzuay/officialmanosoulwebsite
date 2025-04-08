@@ -16,15 +16,6 @@ body {
     height: 100vh; /* Set the height to the viewport height */
 }
 
-/* .content {
-    position: absolute;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  } */
-
 /* Default content for large screens (above 700px) */
 .large-screen-content {
     display: block; /* Show this on larger screens */
@@ -140,4 +131,5 @@ body {
     }
     
     #mffmbutton1 { top: 29vh; left: 28vw; }
+    
 }
