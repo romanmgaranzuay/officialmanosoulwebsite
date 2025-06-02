@@ -1,0 +1,91 @@
+/* =========================
+   SIGNUP FORM STYLES
+   ========================= */
+.signup-container {
+    max-width: 500px;
+    max-height: 100vh;
+    margin: 8rem auto 0 auto;
+    padding: 2rem 2.5rem;
+    background: #242323;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 32px #00000044;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem; /* Controls space between form and text */
+}
+
+.signup-below-text {
+    font-size: 1.2rem;
+    max-width: 90vw;
+    margin: 0 auto;
+    color: #ffffff;
+    text-align: center;
+    font-weight: normal;
+}
+
+.ml-embedded {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: static; /* Prevents overlap */
+    z-index: auto;
+}
+
+/* Orbitron font for embedded MailerLite signup form */
+.ml-embedded,
+.ml-embedded * {
+    font-family: "Stylish", sans-serif, Arial, sans-serif !important;
+    font-style: normal;
+}
+
+.ml-embedded {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto; /* Remove big vertical margin */
+    padding-top: 2rem; /* Adjust padding to fit the design */
+    display: block;
+    transform-origin: bottom center;
+    transform: scale(1.2);
+    min-height: 0px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media (min-width: 1200px) {
+  .signup-container {
+    margin: 15rem auto 0 auto;
+    font-size: 1.4rem;
+    padding: 2rem 2rem;
+    max-width: 600px;
+    height: 500px;
+  }
+  .ml-embedded {
+    width: 600px;
+    padding-top: 0rem;
+    max-width: 100%;
+    height: 400px;
+    transform-origin: top center;
+    transform: scale(1.4);
+  }
+  .signup-below-text {
+    font-size: 1.4rem;
+  }
+}

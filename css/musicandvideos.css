@@ -1,0 +1,259 @@
+/* =========================
+   MUSIC & VIDEOS PAGE STYLES
+   ========================= */
+
+/* Main Heading */
+.music-main h1 {
+    font-size: 3rem;
+    color: #fffc30;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 0rem;
+}
+
+/* Intro Paragraph */
+.music-main p {
+    font-size: 1.3rem;
+    color: #e0dbdb;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Layout: Body & HTML */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(0, 0, 0);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-main {
+    flex: 1 0 auto;
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    color: #fffc30;
+}
+
+/* Music Scroll (Horizontal Cards) */
+.music-scroll-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.music-scroll {
+    width: 100%;
+    max-width: 275px;
+    gap: 0.7rem;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 auto;
+    max-height: 600px;
+    flex: 1 1 auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.music-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Music Card */
+.music-card {
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 0rem 0rem 0rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #0000;
+    box-shadow: 0 2px 12px rgba(222, 226, 9, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    max-height: 600px;
+}
+
+.music-cover {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.467);
+    display: block;
+    background: #18181800;
+    /* Remove height and max-height to avoid distortion */
+}
+
+.music-title {
+    font-weight: bold;
+    color: #ffffff;
+    font-family: "Stylish", sans-serif, Arial, sans-serif;
+}
+
+/* Listen Button */
+.listen-btn {
+    display: inline-block;
+    background: #0000;
+    border: 2px solid #fffc30;
+    color: #fffc30;
+    font-weight: bold;
+    border-radius: 0;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    font-size: 1rem;
+    font-family: "Stylish", sans-serif, Arial, sans-serif;
+    /* box-shadow: 0 1px 4px #0004; */
+}
+
+.listen-btn:hover,
+.listen-btn:focus {
+    background: #fff700;
+    color: #000;
+    transform: scale(1.06);
+}
+
+/* Music Arrows */
+.music-arrows-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 0rem;
+}
+
+.music-arrow {
+    background: none;
+    border: none;
+    color: #fffc30;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 0.2rem 0.7rem;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 2;
+}
+.music-arrow:disabled {
+    color: #888;
+    cursor: default;
+    opacity: 0.5;
+}
+.music-arrow:hover,
+.music-arrow:focus {
+    transform: scale(1.18);
+}
+
+/* Header Socials */
+.header-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%;
+}
+.header-socials img,
+.header-socials svg {
+    max-width: 32px;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 840px) {
+    .music-scroll {
+        max-width: 810px;
+        width: 810px;
+        gap: 1.2rem;
+        padding: 0.5rem 0 1rem 1rem;
+        margin: 0 auto;
+        background: #1a191900;
+    }
+    .music-card {
+        width: 400px;
+        min-width: 400px;
+        max-width: 400px;
+        padding: 0rem 0rem;
+        background-color: #b3b3b300;
+    }
+    .music-cover {
+        max-width: 400px;
+        margin-bottom: 0.5rem;
+    }
+    .music-title {
+        font-size: 1.32rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    .listen-btn {
+        font-size: 1.15rem;
+        padding: 0.7rem 1.5rem;
+    }
+    .music-arrow {
+        font-size: 5rem;
+        display: none; /* Hide arrows on larger screens */
+    }
+}
+
+@media (min-width: 1240px) {
+    .music-main {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .music-scroll {
+        width: 1220px !important;
+        max-width: 1220px !important;
+        gap: 1rem !important;
+        margin: 0 auto !important;
+        padding: 0.5rem 0 1rem 1rem !important;
+        background: #b3a3a300;
+    }
+    .music-card {
+        width: 400px !important;
+        min-width: 400px !important;
+        max-width: 400px !important;
+        padding: 0rem 0rem !important;
+        background-color: #b3b3b300 !important;
+    }
+    .music-cover {
+        max-width: 400px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .music-title {
+        font-size: 1.32rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .listen-btn {
+        font-size: 1.15rem !important;
+        padding: 0.8rem 2rem !important;
+    }
+    .music-arrow {
+        font-size: 7rem;
+    }
+}

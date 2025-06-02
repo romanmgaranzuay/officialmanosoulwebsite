@@ -1,144 +1,725 @@
-html, body
-{
+/* =========================
+   BASE / GLOBAL STYLES
+   ========================= */
+body {
     margin: 0;
+    font-family: "Stylish", sans-serif, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #000000;
+    color: #e0dbdb;
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a00;
+    color: #fff;
+    padding: 0.5rem 0rem;
+    text-align: center;
+    height: 4rem;
+    z-index: 4;
+    transition: background 0.4s cubic-bezier(.4,0,.2,1), color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.header-scrolled {
+    background: #000000 !important;
+    color: #e2e2e2 !important;
+    transition: background 0.3s, color 0.3s;
+}
+
+header.header-scrolled .header-home,
+header.header-scrolled .menu-icon {
+    color: #ffffff !important;
+}
+
+/* =========================
+   NAVIGATION (HEADER LINKS)
+   ========================= */
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    height: 2.8rem;
+    width: 2.8rem;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+}
+
+.header-home {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 0;
-    height: 100%;
+}
+
+.header-name {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    height: 3rem;
+    width: auto;
+    display: block;
+    color: #ffe066;
+    text-shadow: 0 0 12px #fffc30, 0 0 24px #fffc30;
+    transition: 
+        filter 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s,
+        left 0.4s cubic-bezier(.4,0,.2,1) 0.25s;
+    z-index: 10001; /* Ensure above overlay */
+    pointer-events: auto;
+}
+
+a:hover .header-name,
+a:focus .header-name {
+    filter: drop-shadow(0 0 12px #fffc30) drop-shadow(0 0 24px #fffc30);
+    transform: translateY(-50%) scale(1.10);
+}
+
+.header-links {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+    z-index: 5;
+    transition: left 0.4s cubic-bezier(.4,0,.2,1) 0.25s, transform 0.4s cubic-bezier(.4,0,.2,1) 0.25s;
+}
+
+.header-link {
+    font-size: 1rem;
+    color: #fffc30;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s, transform 0.2s;
+    display: block;
+    white-space: nowrap;
+}
+
+.header-link:hover,
+.header-link:focus {
+    color: #fffc30;
+    transform: scale(1.18);
+    text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    padding-top: 8rem;
     overflow: hidden;
 }
 
-
-body {
-    background-image: url('../images/Desktop-1.png');
-    background-size: cover; /* Ensure the height always matches the viewport */
-    background-position: top center; /* Align the top of the image with the top of the viewport */
-    background-repeat: no-repeat; /* Prevent tiling */
-    background-attachment: fixed; /* Keep the image fixed */
-    height: 100vh; /* Set the height to the viewport height */
-}
-
-#mailerlite-form-container {
-    box-sizing: border-box;
-    display: table;
-    top: auto;
-    bottom: 20px !important;
-    position: fixed;
-    width: 100% !important;
-} 
-
-/* Default content for large screens (above 700px) */
-.large-screen-content {
-    display: block; /* Show this on larger screens */
-}
-
-.mobile-content {
-    display: none; /* Hide mobile content by default */
-}
-
-/* Positioning for buttons on larger screens */
-.invisible-streaming-button {
-    background: transparent;
-    border: none;
-    width: 10vw;
-    height: 29vh;
-    cursor: pointer;
-    position: fixed;
-}
-
-#button1 { top: 4vh; left: 16.5vw; }
-#button2 { top: 4vh; left: 28vw; }
-#button3 { top: 4vh; left: 62.2vw; }
-#button4 { top: 4vh; left: 73.55vw; }
-
-/* Social buttons */
-.invisible-socials-button {
-    background: transparent;
-    border: none;
-    width: 7.5vw;
-    height: 16vh;
-    cursor: pointer;
+.hero-bg {
     position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url('../img/Manosoul Banner 1.png') center center/cover no-repeat;
+    width: 100%;
+    background-size: auto calc(300% - 50vw);
 }
 
-#sbutton1 { top: 35.5vh; left: 17.75vw; }
-#sbutton2 { top: 35.5vh; left: 29.5vw; }
-#sbutton3 { top: 35vh; left: 63.5vw; }
-#sbutton4 { top: 34.75vh; left: 74.7vw; }
-
-/* FFM Button */
-.invisible-ffm-button {
-    background: transparent;
-    border: none;
-    width: 10vw;
-    height: 16vh;
-    cursor: pointer;
+.hero-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.11) 40%, #000000 97%),
+        linear-gradient(to top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%);
 }
 
-#ffmbutton1 { top: 55vh; left: 77.5vw; }
+.hero-overlay::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 20px;
+    background: #000;
+    z-index: 2;
+    pointer-events: none;
+}
 
-@media (max-width: 768px) {
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    padding: 3rem 0rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ml-embedded {
+    position: relative;
+    z-index: 3;
+    margin: 2rem 0 0 0;
+    width: 100%;
+    display: block;
+}
+
+/* Orbitron font for embedded MailerLite signup form */
+.ml-embedded,
+.ml-embedded * {
+    font-family: "Stylish", sans-serif, Arial, sans-serif !important;
+    font-style: normal;
+}
+
+/* =========================
+   MUSIC SECTION
+   ========================= */
+
+   /* 
+Keep this comments here for clarity
+.music-section-flex {
     
-    /* Default content for large screens (above 700px) */
-    .large-screen-content {
-        display: none; /* Show this on larger screens */
-    }
+}
 
-    .mobile-content {
-        display: block; /* Hide mobile content by default */
-    }
+.music-banner-info {
+   
+} */
 
-    .invisible-streaming-button,
-    .invisible-socials-button,
-    .invisible-ffm-button {
+.banner-main {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+.banner-main:hover,
+.banner-main:focus {
+    transform: scale(1.08);
+    z-index: 2;
+}
+
+.music-title {
+    text-align: center;
+    width: 100%;
+    margin: 1.2rem 0 0 0;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 0.04em;
+    color: #fffc30;
+}
+
+/* ListenOn links */
+.listenon-links {
+    width: 80%;
+    max-width: 480px;
+    margin: 1.5rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+.listenon-links a {
+    display: block;
+    width: 100%;
+}
+.listenon-links img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: none;
+}
+
+/* ListenOn SVG hover effects */
+a[href*="spotify"] img:hover {
+    filter: drop-shadow(0 0 12px #1db954) drop-shadow(0 0 24px #1db954);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="apple"] img:hover {
+    filter: drop-shadow(0 0 12px #fc3c44) drop-shadow(0 0 24px #fc3c44);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="bandcamp"] img:hover {
+    filter: drop-shadow(0 0 12px #629aa9) drop-shadow(0 0 24px #629aa9);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="youtube"] img:hover {
+    filter: drop-shadow(0 0 12px #ff0000) drop-shadow(0 0 24px #ff0000);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="soundcloud"] img:hover {
+    filter: drop-shadow(0 0 12px #ff5500) drop-shadow(0 0 24px #ff5500);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="amazon"] img:hover {
+    filter: drop-shadow(0 0 12px #006eff) drop-shadow(0 0 24px #006eff);
+    transform: scale(1.12);
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="spotify"] img,
+a[href*="apple"] img,
+a[href*="bandcamp"] img,
+a[href*="youtube"] img,
+a[href*="soundcloud"] img,
+a[href*="amazon"] img {
+    transition: filter 0.2s, transform 0.2s;
+}
+a[href*="amazon"] img {
+    transform: scale(1.02);
+}
+
+/* =========================
+   VIDEO SECTION
+   ========================= */
+.latest-youtube-single {
+    width: 100vw;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: 1400px;
+    background: url('../img/Manosoul Banner 2 PFP Fitted.jpg') center top/cover no-repeat;
+    background-size: calc(175% - 50vw) auto;
+    position: relative;
+    left: 0;
+    padding: 0.5rem 0 2rem 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-size 0.6s cubic-bezier(.4,0,.2,1);
+}
+
+.video-embed-wrapper {
+    width: 100%;
+    height: 150%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.video-embed-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 0;
+    border: none;
+    display: block;
+    background: #000;
+}
+
+.responsive-heading {
+    font-size: clamp(1rem, 8vw, 10rem);
+    color: #fff;
+    text-align: center;
+    margin: 2rem 0 0rem 0;
+    font-weight: bold;
+}
+
+.responsive-heading a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    transition: 
+        filter 0.25s,
+        transform 0.25s,
+        text-decoration 0.15s;
+}
+.responsive-heading a:hover,
+.responsive-heading a:focus {
+    transform: scale(1.02);
+    text-decoration: underline;
+    filter: drop-shadow(0 0 6px #ffffff2c) drop-shadow(0 0 12px #ffffff27);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+    background: #000000;
+    color: #fffc30;
+    padding: 1rem 1rem;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+footer p {
+    font-size: 1.25rem;
+}
+
+.footer-icon {
+    font-size: 1.3rem;
+    transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+    margin: 0 -0.3rem;
+}
+
+.footer-icon:hover,
+.footer-icon:focus {
+    color: #ffffff;
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
+    transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+}
+
+/* =========================
+   SOCIAL ICONS (HEADER & FOOTER)
+   ========================= */
+.header-social {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 5rem;
+    transform: translateY(-50%);
+    z-index: 6;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.header-social a {
+    color: #fff;
+    margin: 0 0.2rem;
+    font-size: 1.6rem;
+    transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-social a:hover,
+.header-social a:focus {
+    color: #ffffff;
+    transform: scale(1.18);
+    text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
+}
+
+.header-icon {
+    font-size: 1.3rem;
+    transition:
+        color 0.2s,
+        transform 0.5s cubic-bezier(.4,0,.2,1),
+        opacity 0.5s cubic-bezier(.4,0,.2,1),
+        text-shadow 0.2s;
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.6s;
+}
+
+.header-icon:hover,
+.header-icon:focus {
+    color: #ffffff;
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
+    transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+}
+
+.header-icon,
+.footer-icon {
+    transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 769px) {
+    header, .header {
+        height: 6rem !important;
+    }
+    .hero {
+        min-height: 70vh;
+        background-size: cover;
+    }
+    main {
+        padding: 3rem 6rem;
+    }
+    .latest-youtube-single {
+        aspect-ratio: 16 / 10;
+        background-size: calc(150% - 50vw) auto;
+    }
+    .header-name {
+        left: 2rem;
+        height: 6rem;
+        font-size: 2.2rem;
+    }
+    .header-home {
+        display: block;
+        right: 6rem;
+    }
+    .ml-embedded {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin: 2rem;
+        width: auto;
+        max-width: 800px;
+        min-width: 400px;
+        transform: scale(1.70);
+        transform-origin: left bottom;
+        display: block;
+    }
+    .video-embed-wrapper {
+        padding-left: 12vw;
+        padding-right: 12vw;
+        height: 90%;
+    }
+    .video-embed-wrapper iframe {
+        aspect-ratio: 16 / 9;
+        max-width: 1920px;
+        height: 100%;
+    }
+    .header-link {
+        font-size: 1.5rem;
+    }
+    .footer-icon {
+        font-size: 2.2rem;
+        margin: 0 0rem;
+    }
+}
+
+@media (min-width: 1080px) {
+    .header-links {
+        display: flex;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+    }
+    .menu-icon {
         display: none;
     }
-
-    body {
-        background-image: url('../images/iPhone 16 - 1.png');
-        background-size: cover; /* Ensure the height always matches the viewport */
-        background-position: top center; /* Align the top of the image with the top of the viewport */
-        background-repeat: no-repeat; /* Prevent tiling */
-        background-attachment: fixed; /* Keep the image fixed */
-        height: 100vh; /* Set the height to the viewport height */
+    .music-section-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto 2rem auto;
     }
-
-    .mobile-streaming-button {
-        background: transparent;
-        border: none;
-        width: 18vw;
-        height: 15vh;
-        cursor: pointer;
-        position: fixed;
+    .music-banner-info {
+        flex: 0 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
     }
-
-    #mbutton1 { top: 11vh; left: 11vw; }
-    #mbutton2 { top: 11vh; left: 31vw; }
-    #mbutton3 { top: 11vh; left: 51vw; }
-    #mbutton4 { top: 11vh; left: 71.5vw; }
-
-    .mobile-socials-button {
-        background: transparent;
-        border: none;
-        width: 11vw;
-        height: 7vh;
-        cursor: pointer;
-        position: absolute;
+    .banner-main {
+        content: url('../img/Manosoul Banner 2 PFP.jpg');
+        max-width: 550px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0;
     }
-    
-    #msbutton1 { top: 57.5vh; left: 12vw; }
-    #msbutton2 { top: 47.5vh; left: 12vw; }
-    #msbutton3 { top: 57.5vh; left: 76vw; }
-    #msbutton4 { top: 47.5vh; left: 76vw; }
-    
-    .mobile-ffm-button {
-        background: transparent;
-        border: none;
-        width: 40vw;
-        height: 16vh;
-        cursor: pointer;
-        position: absolute;
+    .listenon-links {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        justify-content: center;
+        min-width: 140px;
     }
-    
-    #mffmbutton1 { top: 29vh; left: 28vw; }
-    
+    .listenon-links a {
+        width: 100%;
+    }
+    .listenon-links img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .header-social {
+        display: flex;
+    }
+}
+
+@media (min-width: 1141px) {
+    .header-name {
+        left: 5rem;
+    }
+}
+
+@media (max-width: 1140px) {
+    .header-links {
+        left: calc(100% - 2.5rem);
+        transform: translate(-100%, -50%);
+        justify-content: flex-end;
+    }
+    .header-icon {
+        transform: translateX(120px) rotate(18deg) scale(0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition-delay: 1.1s;
+    }
+}
+
+@media (min-width: 1140px) {
+    .footer-icon {
+        display: none; 
+    }
+}
+
+/* Overlay Menu Styles */
+.overlay-menu {
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.97);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+.overlay-menu.open {
+    display: flex;
+    opacity: 1;
+}
+.overlay-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: #fffc30;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.2s;
+}
+.overlay-close:hover,
+.overlay-close:focus {
+    color: #fff;
+}
+.overlay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+.overlay-link {
+    font-size: 2.2rem;
+    color: #fffc30;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    transition: color 0.2s, transform 0.2s;
+}
+.overlay-link:hover,
+.overlay-link:focus {
+    color: #fff;
+    transform: scale(1.12);
+    text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+}
+.overlay-social {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+.overlay-social a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.2s, transform 0.2s;
+}
+.overlay-social a:hover,
+.overlay-social a:focus {
+    color: #fff;
+    transform: scale(1.18);
+    text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+}
+
+/* Hide overlay menu on large screens */
+@media (min-width: 1080px) {
+    .overlay-menu {
+        display: none !important;
+    }
+}
+@media (min-width: 769px) {
+    .overlay-header-name-link .menu-home {
+        left: 2rem;
+        height: 6rem;
+    }
+}
+@media (min-width: 1141px) {
+    .overlay-header-name-link .menu-home {
+        left: 5rem;
+    }
+}
+
+/* Make the overlay menu logo smaller when menu is open */
+.overlay-menu.open .menu-home {
+    height: 8rem !important;
+    max-width: 100vw;
+}
+@media (min-width: 769px) {
+    .overlay-menu.open .menu-home {
+        height: 8rem !important;
+    }
+}
+@media (max-width: 319px) {
+    .overlay-menu.open .overlay-nav {
+        transform: scale(0.75);
+        gap: 1rem;
+        margin-bottom: 1rem;
+}
+    }
+    .overlay-menu.open .overlay-link {
+        font-size: 1.2rem;
+    }
+    .overlay-menu.open .menu-home {
+        height: 4rem !important;
+        max-width: 60vw;
+    }
+    .overlay-menu.open .overlay-social {
+        transform: scale(0.7);
+        gap: 0.5rem;
+    }
 }

@@ -3,60 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Manosoul">
-    <meta property="og:description" content="Manosoul is a songwriter, rapper, and record producer from Virginia who now resides in Texas">
-    <meta property="og:image" content="https://manosoul.com/images/Desktop-1.png">
-    <title>
-        Manosoul
-    </title>
+    <title>Manosoul</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortbut icon" href="/favicon.ico" type="image/x-icon" />
-
-    <script src="js/main.js" defer></script>
-
+    <!-- Add Google Fonts Stylish -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <style>
+      /* Stylish font utility class example */
+      .stylish-regular {
+        font-family: "Stylish", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
     <!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1429872');
-</script>
-<!-- End MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1429872');
+    </script>
+    <!-- End MailerLite Universal -->
+     <script src="https://kit.fontawesome.com/a1f3940678.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="content large-screen.content">      
-        <button id="button1" class="invisible-streaming-button" onclick="openInNewTab('https://manosoul.bandcamp.com');"></button>
-        <button id="button2" class="invisible-streaming-button" onclick="openInNewTab('https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=1PUZzfkTTKKFRsIOe6BtPA');"></button>
-        <button id="button3" class="invisible-streaming-button" onclick="openInNewTab('https://music.apple.com/us/artist/manosoul/1792274668');"></button>
-        <button id="button4" class="invisible-streaming-button" onclick="openInNewTab('https://www.youtube.com/channel/UCGMCNCqcZKXnATVap_wC5Bg');"></button>
-
-        <button id="sbutton1" class="invisible-socials-button" onclick="openInNewTab('https://www.facebook.com/manosoul0');"></button>
-        <button id="sbutton2" class="invisible-socials-button" onclick="openInNewTab('https://x.com/manosoul0');"></button>
-        <button id="sbutton3" class="invisible-socials-button" onclick="openInNewTab('https://www.tiktok.com/@manosoul0');"></button>
-        <button id="sbutton4" class="invisible-socials-button" onclick="openInNewTab('https://www.instagram.com/manosoul0/');"></button>
-        
-        <button id="ffmbutton1" class="invisible-ffm-button" onclick="openInNewTab('https://ffm.to/manosoul-find-a-way');"></button>
+    <header>
+        <a href="index.html">
+            <img src="img/white_name.png" alt="Manosoul Name" class="header-name" />
+        </a>
+        <img src="img/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg" alt="Menu" class="menu-icon" id="menuIcon" />
+        <div class="header-links">
+            <a href="/music.html" class="header-link">MUSIC</a>
+            <a href="/videos.html" class="header-link">VIDEOS</a>
+            <a href="/store.html" class="header-link">STORE</a>
+            <a href="/signup.html" class="header-link">SIGN UP</a>
+        </div>
+        <div class="header-social">
+            <a href="https://www.instagram.com/manosoul0/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram header-icon"></i>
+            </a>
+            <a href="https://twitter.com/manosoul0" target="_blank" aria-label="Twitter/X">
+                <i class="fa-brands fa-x-twitter header-icon"></i>
+            </a>
+            <a href="https://www.facebook.com/manosoul0/" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f header-icon"></i>
+            </a>
+            <a href="https://www.tiktok.com/@manosoul0" target="_blank" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok header-icon"></i>
+            </a>
+            <a href="https://soundcloud.com/manosoul0" target="_blank" aria-label="SoundCloud">
+                <i class="fa-brands fa-soundcloud header-icon"></i>
+            </a>
+            <a href="https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=NNKWmiHASwOD55Qu3xioMg" target="_blank" aria-label="Spotify">
+                <i class="fa-brands fa-spotify header-icon"></i>
+            </a>
+            <a href="https://music.apple.com/us/artist/manosoul/1792274668" target="_blank" aria-label="Apple Music">
+                <i class="fa-brands fa-itunes-note header-icon"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCGMCNCqcZKXnATVap_wC5Bg" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube header-icon"></i>
+            </a>
+        </div>
+    </header>
+    <!-- Overlay Menu -->
+    <div id="overlayMenu" class="overlay-menu">
+        <button class="overlay-close" id="overlayClose" aria-label="Close Menu">&times;</button>
+        <nav class="overlay-nav">
+            <a href="index.html" class="overlay-link">
+                <img src="img/white_name.png" alt="Manosoul Name" class="menu-home" />
+            </a>
+            <a href="/music.html" class="overlay-link">MUSIC</a>
+            <a href="/videos.html" class="overlay-link">VIDEOS</a>
+            <a href="/store.html" class="overlay-link">STORE</a>
+            <a href="/signup.html" class="overlay-link">SIGN UP</a>
+        </nav>
+        <div class="overlay-social">
+            <a href="https://www.instagram.com/manosoul0/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/manosoul0" target="_blank" aria-label="Twitter/X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/manosoul0/" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@manosoul0" target="_blank" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://soundcloud.com/manosoul0" target="_blank" aria-label="SoundCloud">
+                <i class="fa-brands fa-soundcloud"></i>
+            </a>
+            <a href="https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=NNKWmiHASwOD55Qu3xioMg" target="_blank" aria-label="Spotify">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://music.apple.com/us/artist/manosoul/1792274668" target="_blank" aria-label="Apple Music">
+                <i class="fa-brands fa-itunes-note"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCGMCNCqcZKXnATVap_wC5Bg" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
     </div>
-
-    <div class="content mobile.content">      
-        <button id="mbutton1" class="mobile-streaming-button" onclick="openInNewTab('https://manosoul.bandcamp.com');"></button>
-        <button id="mbutton2" class="mobile-streaming-button" onclick="openInNewTab('https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=1PUZzfkTTKKFRsIOe6BtPA');"></button>
-        <button id="mbutton3" class="mobile-streaming-button" onclick="openInNewTab('https://music.apple.com/us/artist/manosoul/1792274668');"></button>
-        <button id="mbutton4" class="mobile-streaming-button" onclick="openInNewTab('https://www.youtube.com/channel/UCGMCNCqcZKXnATVap_wC5Bg');"></button>
-
-        <button id="msbutton1" class="mobile-socials-button" onclick="openInNewTab('https://www.facebook.com/manosoul0');"></button>
-        <button id="msbutton2" class="mobile-socials-button" onclick="openInNewTab('https://x.com/manosoul0');"></button>
-        <button id="msbutton3" class="mobile-socials-button" onclick="openInNewTab('https://www.tiktok.com/@manosoul0');"></button>
-        <button id="msbutton4" class="mobile-socials-button" onclick="openInNewTab('https://www.instagram.com/manosoul0/');"></button>
-        
-        <button id="mffmbutton1" class="mobile-ffm-button" onclick="openInNewTab('https://ffm.to/manosoul-find-a-way');" ></button> 
-
-        
-    </div>
-    
-    <div id="mailerlite-form-container">
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <!-- Add any hero text or buttons here if needed -->
+        </div>
         <div class="ml-embedded" data-form="3A9cxX"></div>
+    </section>
+    <main>
+        <div class="music-section-flex">
+            <div class="music-banner-info">
+                <picture>
+                    <source srcset="img/Manosoul Banner 2 PFP.jpg" media="(min-width: 1080px)">
+                    <img src="img/Manosoul Banner 2.png" alt="Manosoul Banner 2" class="banner-main">
+                </picture>
+                <p id="music-title" class="music-title">STREAM MANOSOUL'S MUSIC</p>
+            </div>
+            <div class="listenon-links">
+                <a href="https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=1PUZzfkTTKKFRsIOe6BtPA" target="_blank" aria-label="Listen on Spotify">
+                    <img src="img/ListenOnSpotify.svg" alt="Listen on Spotify">
+                </a>
+                <a href="https://music.apple.com/us/artist/manosoul/1792274668" target="_blank" aria-label="Listen on Apple Music">
+                    <img src="img/ListenOnAppleMusic.svg" alt="Listen on Apple Music">
+                </a>
+                <a href="https://manosoul.bandcamp.com" target="_blank" aria-label="Listen on Bandcamp">
+                    <img src="img/ListenOnBandcamp.svg" alt="Listen on Bandcamp">
+                </a>
+                <a href="https://music.youtube.com/channel/UC_du39QzX5VlHbSBMZy5Gcw?si=VbUp3XdkV6DzyECG" target="_blank" aria-label="Listen on YouTube Music">
+                    <img src="img/ListenOnYoutubeMusic.svg" alt="Listen on YouTube Music">
+                </a>
+                <a href="https://soundcloud.com/manosoul0" target="_blank" aria-label="Listen on SoundCloud">
+                    <img src="img/ListenOnSoundcloud.svg" alt="Listen on SoundCloud">
+                </a>
+                <a href="https://music.amazon.com/artists/B0DTV6VTXR/manosoul" target="_blank" aria-label="Listen on Amazon Music">
+                    <img src="img/ListenOnAmazon.svg" alt="Listen on Amazon Music">
+                </a>
+            </div>
+        </div>
+    </main>
+    <div style="text-align:center; color:#fffc30; font-size:clamp(1rem, 10vw, 10rem); font-weight:600; margin-bottom:0.5rem;">
+        LATEST SINGLE
     </div>
+    <div class="latest-youtube-single">
+        <h2 class="responsive-heading">
+            <a href="https://ffm.to/manosoul-find-a-way" target="_blank" rel="noopener" style="color:inherit;">
+                FIND A WAY
+            </a>
+        </h2>
+        <div class="video-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/t62fmDo6J3U?si=fdAJylXZtDBpHmCR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer>
+        <div style="margin-bottom:0.5rem; text-align:center;">
+            <!-- Social media/music icons -->
+            <a href="https://www.instagram.com/manosoul0/" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-instagram footer-icon"></i></a>
+            <a href="https://twitter.com/manosoul0" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-x-twitter footer-icon"></i></a>
+            <a href="https://www.facebook.com/manosoul0/" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-facebook-f footer-icon"></i></a>
+            <a href="https://www.tiktok.com/@manosoul0" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-tiktok footer-icon"></i></a>
+            <a href="https://soundcloud.com/manosoul0" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-soundcloud footer-icon"></i></a>
+            <a href="https://open.spotify.com/artist/0dNg8j9ax4iFALGJ6Txaj7?si=NNKWmiHASwOD55Qu3xioMg" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-spotify footer-icon"></i></a>
+            <a href="https://music.apple.com/us/artist/manosoul/1792274668" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-itunes-note footer-icon"></i></a>
+            <a href="https://www.youtube.com/channel/UCGMCNCqcZKXnATVap_wC5Bg" target="_blank" style="margin:0 0.5rem; color:#fff;">
+                <i class="fa-brands fa-youtube footer-icon"></i></a>
+        </div>
+        <p>&copy; 2025 Manosoul</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+    // Toggle header background on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    });
+
+    // Overlay menu open/close logic
+    document.getElementById('menuIcon').addEventListener('click', function() {
+        document.getElementById('overlayMenu').classList.add('open');
+    });
+    document.getElementById('overlayClose').addEventListener('click', function() {
+        document.getElementById('overlayMenu').classList.remove('open');
+    });
+    // Optional: close overlay when clicking a link
+    document.querySelectorAll('.overlay-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('overlayMenu').classList.remove('open');
+        });
+    });
+    </script>
 </body>
 </html>
