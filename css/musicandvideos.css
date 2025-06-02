@@ -4,12 +4,14 @@
 
 /* Main Heading */
 .music-main h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fffc30;
     letter-spacing: 0.08em;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 12vh;
     margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* Intro Paragraph */
@@ -76,7 +78,7 @@ footer {
     scroll-behavior: smooth;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
-    background-color: #002fff00;
+    background-color: #002fff;
 }
 .music-scroll::-webkit-scrollbar {
     display: none;
@@ -89,7 +91,7 @@ footer {
     max-width: 250px;
     padding: 0rem 1rem 0rem 1rem;
     border-radius: 0.5rem;
-    background-color: #d4000000;
+    background-color: #d40000;
     box-shadow: 0 2px 12px rgba(222, 226, 9, 0);
     display: flex;
     flex-direction: column;
@@ -105,7 +107,7 @@ footer {
     object-fit: cover;
     border-radius: 0.5rem;
     margin-bottom: 0rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.467);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.486);
     display: block;
     background: #000000d7;
     /* Removed aspect-ratio to allow full width images */
@@ -149,7 +151,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    margin-top: -2.5rem;
+    margin-top: 1rem;
 }
 
 .music-arrow {
@@ -259,6 +261,9 @@ a > .video-play-icon {
     }
     .music-arrow {
         font-size: 5rem;/* Hide arrows on larger screens */
+    }
+    .music-arrows-row {
+        margin-top: -2.5rem; /* Hide arrows on larger screens */
     }
 
     /* If you add glow effects to listen-btn or music-arrow in the future, 
