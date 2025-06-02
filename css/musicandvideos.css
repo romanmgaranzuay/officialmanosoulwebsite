@@ -68,13 +68,14 @@ footer {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 400px; /* or whatever fits your cards */
+    height: 380px; /* or whatever fits your cards */
     scroll-snap-type: x mandatory;
     margin: 0 auto;
     max-height: 600px;
     flex: 1 1 auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    overscroll-behavior-x: contain;
 }
 .music-scroll::-webkit-scrollbar {
     display: none;
@@ -193,6 +194,7 @@ footer {
         gap: 1.2rem;
         padding: 0.5rem 0 1rem 1rem;
         margin: 0 auto;
+        height: 520px;
         background: #1a191900;
     }
     .music-card {
