@@ -63,8 +63,8 @@ footer {
 .music-scroll {
     width: 100vw;
     max-width: none;
-    gap: 0.7rem;
-    padding: 1rem 1rem 1rem 0;
+    gap: 0rem;
+    padding: 1rem 0rem 1rem 0;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -83,7 +83,7 @@ footer {
     width: 250px;
     min-width: 250px;
     max-width: 250px;
-    padding: 0rem 0rem 0rem 1rem;
+    padding: 0rem 1rem 0rem 1rem;
     border-radius: 0.5rem;
     background-color: #0000;
     box-shadow: 0 2px 12px rgba(222, 226, 9, 0);
