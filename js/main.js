@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function scrollToCard(idx) {
         if (cards[idx]) {
-            cards[idx].scrollIntoView({ behavior: "smooth", inline: "start" });
+            cards[idx].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
             currentIndex = idx;
             updateArrows();
         }
