@@ -4,7 +4,7 @@
 
 /* Main Heading */
 .music-main h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fffc30;
     letter-spacing: 0.08em;
     text-align: center;
@@ -25,7 +25,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: rgb(199, 192, 192);
+    background: rgb(0, 0, 0);
 }
 
 body {
@@ -64,11 +64,11 @@ footer {
     width: 100vw;
     max-width: none;
     gap: 0rem;
-    padding: 1rem 0rem 1rem 0;
+    padding: 0.5rem 0rem 0rem 0;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 380px; /* or whatever fits your cards */
+    height: 365px; /* or whatever fits your cards */
     scroll-snap-type: x mandatory;
     margin: 0 auto;
     max-height: 600px;
@@ -76,6 +76,7 @@ footer {
     scroll-behavior: smooth;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
+    background-color: #002fff00;
 }
 .music-scroll::-webkit-scrollbar {
     display: none;
@@ -88,32 +89,34 @@ footer {
     max-width: 250px;
     padding: 0rem 1rem 0rem 1rem;
     border-radius: 0.5rem;
-    background-color: #0000;
+    background-color: #d4000000;
     box-shadow: 0 2px 12px rgba(222, 226, 9, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
     scroll-snap-align: start;
-    max-height: 600px;
+    height: 360px; /* Adjusted for card height */
+    max-height: 400px;
 }
 
 .music-cover {
     width: 100%;
-    max-width: 300px;
-    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.467);
     display: block;
-    background: #18181800;
-    /* Remove height and max-height to avoid distortion */
+    background: #000000d7;
+    /* Removed aspect-ratio to allow full width images */
+    max-height: 400px; /* or whatever fits your design */
 }
 
 .music-title {
     font-weight: bold;
     color: #ffffff;
     font-family: "Stylish", sans-serif, Arial, sans-serif;
+    font-size: 1.2rem;  
 }
 
 /* Listen Button */
@@ -146,7 +149,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    margin-top: 0rem;
+    margin-top: -2.5rem;
 }
 
 .music-arrow {
@@ -160,7 +163,7 @@ footer {
     z-index: 2;
 }
 .music-arrow:disabled {
-    color: #888;
+    color: #aca5a5;
     cursor: default;
     opacity: 0.5;
 }
@@ -186,6 +189,42 @@ footer {
     display: block;
 }
 
+/* Shorter cards for videos page */
+.videos-page .music-card {
+    max-height: 250px;
+    min-height: 180px;
+    height: 250px;
+}
+.videos-page .music-cover {
+    max-height: 220px;
+    min-height: 150px;
+    height: 190px;
+    margin-bottom: 0rem;
+}
+.videos-page .music-scroll {
+    height: 255px; /* Adjusted for shorter cards */
+    max-height: 300px;
+    padding: 0.5rem 0rem 0rem 0;
+}
+
+/* Play Icon Overlay for Videos */
+.video-play-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3rem;
+    opacity: 0.88;
+    filter: drop-shadow(0 2px 8px #000b);
+    pointer-events: none;
+    z-index: 2;
+}
+a > .video-play-icon {
+    /* Ensures icon is clickable with the link */
+    pointer-events: none;
+}
+
 /* Responsive Adjustments */
 @media (min-width: 840px) {
     .music-scroll {
@@ -194,19 +233,20 @@ footer {
         gap: 1.2rem;
         padding: 0.5rem 0 1rem 1rem;
         margin: 0 auto;
-        height: 520px;
-        background: #1a191900;
+        height: 470px;
     }
     .music-card {
         width: 400px;
         min-width: 400px;
         max-width: 400px;
         padding: 0rem 0rem;
-        background-color: #b3b3b300;
     }
     .music-cover {
-        max-width: 400px;
+        max-width: 350px;
+        width: 100%;
+        height: auto;
         margin-bottom: 0.5rem;
+        object-fit: cover;
     }
     .music-title {
         font-size: 1.32rem;
@@ -218,8 +258,7 @@ footer {
         padding: 0.7rem 1.5rem;
     }
     .music-arrow {
-        font-size: 5rem;
-        display: none; /* Hide arrows on larger screens */
+        font-size: 5rem;/* Hide arrows on larger screens */
     }
 
     /* If you add glow effects to listen-btn or music-arrow in the future, 
@@ -248,18 +287,19 @@ footer {
         gap: 1rem !important;
         margin: 0 auto !important;
         padding: 0.5rem 0 1rem 1rem !important;
-        background: #b3a3a300;
     }
     .music-card {
         width: 400px !important;
         min-width: 400px !important;
         max-width: 400px !important;
         padding: 0rem 0rem !important;
-        background-color: #b3b3b300 !important;
     }
     .music-cover {
-        max-width: 400px !important;
+        max-width: 350px !important;
+        width: 100% !important;
+        height: auto !important;
         margin-bottom: 0.5rem !important;
+        object-fit: cover !important;
     }
     .music-title {
         font-size: 1.32rem !important;
