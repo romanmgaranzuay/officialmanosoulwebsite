@@ -217,6 +217,18 @@ footer {
         font-size: 5rem;
         display: none; /* Hide arrows on larger screens */
     }
+
+    /* If you add glow effects to listen-btn or music-arrow in the future, 
+       move them to the desktop media queries as shown below. */
+
+    /* Example for future use:
+    @media (min-width: 840px) {
+        .listen-btn:hover,
+        .listen-btn:focus {
+            filter: drop-shadow(...);
+        }
+    }
+    */
 }
 
 @media (min-width: 1240px) {

@@ -98,7 +98,7 @@ header.header-scrolled .menu-icon {
 
 a:hover .header-name,
 a:focus .header-name {
-    filter: drop-shadow(0 0 12px #fffc30) drop-shadow(0 0 24px #fffc30);
+    /* filter: drop-shadow(0 0 12px #fffc30) drop-shadow(0 0 24px #fffc30); -- removed for mobile */
     transform: translateY(-50%) scale(1.10);
 }
 
@@ -133,8 +133,8 @@ a:focus .header-name {
 .header-link:hover,
 .header-link:focus {
     color: #fffc30;
+    /* text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30; -- removed for mobile */
     transform: scale(1.18);
-    text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
 }
 
 /* =========================
@@ -229,6 +229,7 @@ Keep this comments here for clarity
 
 .banner-main:hover,
 .banner-main:focus {
+    /* ...existing code... */
     transform: scale(1.08);
     z-index: 2;
 }
@@ -267,32 +268,32 @@ Keep this comments here for clarity
 
 /* ListenOn SVG hover effects */
 a[href*="spotify"] img:hover {
-    filter: drop-shadow(0 0 12px #1db954) drop-shadow(0 0 24px #1db954);
+    /* filter: drop-shadow(0 0 12px #1db954) drop-shadow(0 0 24px #1db954); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
 a[href*="apple"] img:hover {
-    filter: drop-shadow(0 0 12px #fc3c44) drop-shadow(0 0 24px #fc3c44);
+    /* filter: drop-shadow(0 0 12px #fc3c44) drop-shadow(0 0 24px #fc3c44); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
 a[href*="bandcamp"] img:hover {
-    filter: drop-shadow(0 0 12px #629aa9) drop-shadow(0 0 24px #629aa9);
+    /* filter: drop-shadow(0 0 12px #629aa9) drop-shadow(0 0 24px #629aa9); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
 a[href*="youtube"] img:hover {
-    filter: drop-shadow(0 0 12px #ff0000) drop-shadow(0 0 24px #ff0000);
+    /* filter: drop-shadow(0 0 12px #ff0000) drop-shadow(0 0 24px #ff0000); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
 a[href*="soundcloud"] img:hover {
-    filter: drop-shadow(0 0 12px #ff5500) drop-shadow(0 0 24px #ff5500);
+    /* filter: drop-shadow(0 0 12px #ff5500) drop-shadow(0 0 24px #ff5500); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
 a[href*="amazon"] img:hover {
-    filter: drop-shadow(0 0 12px #006eff) drop-shadow(0 0 24px #006eff);
+    /* filter: drop-shadow(0 0 12px #006eff) drop-shadow(0 0 24px #006eff); -- removed for mobile */
     transform: scale(1.12);
     transition: filter 0.2s, transform 0.2s;
 }
@@ -356,14 +357,14 @@ a[href*="amazon"] img {
     font-size: clamp(1rem, 8vw, 10rem);
     color: #fff;
     text-align: center;
-    margin: 2rem 0 0rem 0;
+    margin: 2rem 0 0.5rem 0;
     font-weight: bold;
 }
 
 .responsive-heading a {
     display: inline-block;
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
     transition: 
         filter 0.25s,
         transform 0.25s,
@@ -371,9 +372,9 @@ a[href*="amazon"] img {
 }
 .responsive-heading a:hover,
 .responsive-heading a:focus {
+    /* filter: drop-shadow(0 0 6px #ffffff2c) drop-shadow(0 0 12px #ffffff27); -- removed for mobile */
     transform: scale(1.02);
     text-decoration: underline;
-    filter: drop-shadow(0 0 6px #ffffff2c) drop-shadow(0 0 12px #ffffff27);
 }
 
 /* =========================
@@ -400,8 +401,8 @@ footer p {
 .footer-icon:hover,
 .footer-icon:focus {
     color: #ffffff;
+    /* filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30); -- removed for mobile */
     transform: scale(1.18);
-    filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
     transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
 }
 
@@ -431,8 +432,8 @@ footer p {
 .header-social a:hover,
 .header-social a:focus {
     color: #ffffff;
+    /* text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff; -- removed for mobile */
     transform: scale(1.18);
-    text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
 }
 
 .header-icon {
@@ -450,8 +451,8 @@ footer p {
 .header-icon:hover,
 .header-icon:focus {
     color: #ffffff;
+    /* filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30); -- removed for mobile */
     transform: scale(1.18);
-    filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
     transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
 }
 
@@ -495,7 +496,7 @@ footer p {
         width: auto;
         max-width: 800px;
         min-width: 400px;
-        transform: scale(1.70);
+        transform: scale(1.10);
         transform-origin: left bottom;
         display: block;
     }
@@ -655,6 +656,7 @@ footer p {
 .overlay-link:hover,
 .overlay-link:focus {
     color: #fff;
+    /* text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30; -- removed for mobile */
     transform: scale(1.12);
     text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
 }
@@ -709,8 +711,7 @@ footer p {
         transform: scale(0.75);
         gap: 1rem;
         margin-bottom: 1rem;
-}
-    }
+        }
     .overlay-menu.open .overlay-link {
         font-size: 1.2rem;
     }
@@ -721,5 +722,59 @@ footer p {
     .overlay-menu.open .overlay-social {
         transform: scale(0.7);
         gap: 0.5rem;
+    }
+}
+
+/* Add glow effects back for desktop/large screens */
+@media (min-width: 769px) {
+    a:hover .header-name,
+    a:focus .header-name {
+        filter: drop-shadow(0 0 12px #fffc30) drop-shadow(0 0 24px #fffc30);
+    }
+    .header-link:hover,
+    .header-link:focus {
+        text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+    }
+    .footer-icon:hover,
+    .footer-icon:focus {
+        filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
+    }
+    .header-social a:hover,
+    .header-social a:focus {
+        text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
+    }
+    .header-icon:hover,
+    .header-icon:focus {
+        filter: drop-shadow(0 0 6px #fffc30) drop-shadow(0 0 12px #fffc30);
+    }
+    .overlay-link:hover,
+    .overlay-link:focus {
+        text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+    }
+    .overlay-social a:hover,
+    .overlay-social a:focus {
+        text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
+    }
+    .responsive-heading a:hover,
+    .responsive-heading a:focus {
+        filter: drop-shadow(0 0 6px #ffffff2c) drop-shadow(0 0 12px #ffffff27);
+    }
+    .listenon-links a[href*="spotify"] img:hover {
+        filter: drop-shadow(0 0 12px #1db954) drop-shadow(0 0 24px #1db954);
+    }
+    .listenon-links a[href*="apple"] img:hover {
+        filter: drop-shadow(0 0 12px #fc3c44) drop-shadow(0 0 24px #fc3c44);
+    }
+    .listenon-links a[href*="bandcamp"] img:hover {
+        filter: drop-shadow(0 0 12px #629aa9) drop-shadow(0 0 24px #629aa9);
+    }
+    .listenon-links a[href*="youtube"] img:hover {
+        filter: drop-shadow(0 0 12px #ff0000) drop-shadow(0 0 24px #ff0000);
+    }
+    .listenon-links a[href*="soundcloud"] img:hover {
+        filter: drop-shadow(0 0 12px #ff5500) drop-shadow(0 0 24px #ff5500);
+    }
+    .listenon-links a[href*="amazon"] img:hover {
+        filter: drop-shadow(0 0 12px #006eff) drop-shadow(0 0 24px #006eff);
     }
 }
