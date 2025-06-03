@@ -97,7 +97,7 @@ footer {
     flex-direction: column;
     align-items: center;
     scroll-snap-align: start;
-    height: 385px; /* Adjusted for card height */
+    height: 355px; /* Adjusted for card height */
     max-height: 550px;
 }
 
