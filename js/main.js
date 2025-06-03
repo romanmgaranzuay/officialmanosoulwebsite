@@ -1,7 +1,16 @@
+// =========================
+// MAIN JAVASCRIPT FILE
+// =========================
+
+// =========================
+// DOM READY
+// =========================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Welcome to Manosoul Website 2.0!');
     
-    // Music scroll logic
+    // =========================
+    // MUSIC SCROLL LOGIC
+    // =========================
     const scrollContainer = document.querySelector('.music-scroll');
     const cards = Array.from(document.querySelectorAll('.music-card'));
     const leftBtn = document.querySelector('.music-arrow.left');
@@ -49,7 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateArrows();
     }
 
-    // Header background on scroll
+    // =========================
+    // HEADER SCROLL EFFECT
+    // =========================
     const header = document.querySelector('header');
     if (header) {
         window.addEventListener('scroll', function() {
@@ -61,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Overlay menu open/close logic
+    // =========================
+    // OVERLAY MENU LOGIC
+    // =========================
     const menuIcon = document.getElementById('menuIcon');
     const overlayMenu = document.getElementById('overlayMenu');
     const overlayClose = document.getElementById('overlayClose');
@@ -84,7 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // SHOP overlay logic
+    // =========================
+    // SHOP OVERLAY LOGIC (Mobile)
+    // =========================
     const shopOverlayMenu = document.getElementById('shopOverlayMenu');
     const openShopOverlay = document.getElementById('openShopOverlay');
     const shopOverlayBack = document.getElementById('shopOverlayBack');
@@ -115,7 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Desktop SHOP overlay logic
+    // =========================
+    // SHOP OVERLAY LOGIC (Desktop)
+    // =========================
     const desktopShopOverlayOpen = document.getElementById('desktopShopOverlayOpen');
     const desktopShopOverlayMenu = document.getElementById('desktopShopOverlayMenu');
     const desktopShopOverlayClose = document.getElementById('desktopShopOverlayClose');

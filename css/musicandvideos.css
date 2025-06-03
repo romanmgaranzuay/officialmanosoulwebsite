@@ -2,7 +2,9 @@
    MUSIC & VIDEOS PAGE STYLES
    ========================= */
 
-/* Main Heading */
+/* =========================
+   MAIN HEADINGS & INTRO
+   ========================= */
 .music-main h1 {
     font-size: 1.5rem;
     color: #fffc30;
@@ -14,7 +16,6 @@
     margin-right: 1rem;
 }
 
-/* Intro Paragraph */
 .music-main p {
     font-size: 1.3rem;
     color: #e0dbdb;
@@ -22,7 +23,9 @@
     margin-bottom: 2.5rem;
 }
 
-/* Layout: Body & HTML */
+/* =========================
+   PAGE LAYOUT & STRUCTURE
+   ========================= */
 html, body {
     height: 100%;
     margin: 0;
@@ -40,7 +43,9 @@ body {
     flex: 1 0 auto;
 }
 
-/* Footer */
+/* =========================
+   FOOTER STYLES
+   ========================= */
 footer {
     flex-shrink: 0;
     width: 100%;
@@ -54,7 +59,9 @@ footer {
     color: #fffc30;
 }
 
-/* Music Scroll (Horizontal Cards) */
+/* =========================
+   MUSIC SCROLL (HORIZONTAL CARDS)
+   ========================= */
 .music-scroll-wrapper {
     display: flex;
     flex-direction: column;
@@ -84,7 +91,9 @@ footer {
     display: none;
 }
 
-/* Music Card */
+/* =========================
+   MUSIC CARD STYLES
+   ========================= */
 .music-card {
     width: 275px;
     min-width: 250px;
@@ -122,7 +131,9 @@ footer {
     font-size: 1.2rem;  
 }
 
-/* Listen Button */
+/* =========================
+   LISTEN BUTTON
+   ========================= */
 .listen-btn {
     display: inline-block;
     background: #0000;
@@ -146,7 +157,9 @@ footer {
     transform: scale(1.06);
 }
 
-/* Music Arrows */
+/* =========================
+   MUSIC ARROWS
+   ========================= */
 .music-arrows-row {
     width: 100%;
     display: flex;
@@ -175,7 +188,9 @@ footer {
     transform: scale(1.18);
 }
 
-/* Header Socials */
+/* =========================
+   HEADER SOCIALS
+   ========================= */
 .header-socials {
     display: flex;
     flex-wrap: wrap;
@@ -192,7 +207,9 @@ footer {
     display: block;
 }
 
-/* Shorter cards for videos page */
+/* =========================
+   VIDEOS PAGE CARD SHORTENING
+   ========================= */
 .videos-page .music-card {
     max-height: 250px;
     min-height: 180px;
@@ -210,7 +227,9 @@ footer {
     padding: 0.5rem 0rem 0rem 0;
 }
 
-/* Play Icon Overlay for Videos */
+/* =========================
+   PLAY ICON OVERLAY FOR VIDEOS
+   ========================= */
 .video-play-icon {
     position: absolute;
     left: 50%;
@@ -222,13 +241,33 @@ footer {
     filter: drop-shadow(0 2px 8px #000b);
     pointer-events: none;
     z-index: 2;
+    transition: opacity 0.2s cubic-bezier(.4,0,.2,1);
 }
 a > .video-play-icon {
     /* Ensures icon is clickable with the link */
     pointer-events: none;
 }
 
-/* Responsive Adjustments */
+/* =========================
+   VIDEO HOVER EFFECTS
+   ========================= */
+
+.videos-page .music-card a:hover .video-play-icon,
+.videos-page .music-card a:focus .video-play-icon {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.18);
+    filter: drop-shadow(0 0 16px #fff700cc) drop-shadow(0 2px 8px #000b);
+    color: #fff700;
+    transition:
+        opacity 0.18s cubic-bezier(.4,0,.2,1),
+        transform 0.22s cubic-bezier(.4,0,.2,1),
+        filter 0.22s cubic-bezier(.4,0,.2,1),
+        color 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+   ========================= */
 @media (min-width: 840px) {
     .music-scroll {
         max-width: 810px;

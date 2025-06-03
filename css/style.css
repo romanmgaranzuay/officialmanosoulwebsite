@@ -611,7 +611,9 @@ footer p {
     }
 }
 
-/* Overlay Menu Styles */
+/* =========================
+   OVERLAY MENU STYLES
+   ========================= */
 .overlay-menu {
     position: fixed;
     z-index: 9999;
@@ -690,7 +692,9 @@ footer p {
     text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
 }
 
-/* SHOP Overlay Menu (slides in from right) */
+/* =========================
+   SHOP OVERLAY MENU (slides in from right)
+   ========================= */
 .shop-overlay-menu {
     right: 0;
     left: auto;
@@ -719,7 +723,9 @@ footer p {
     /* ...existing styles... */
 }
 
-/* Add glow effects back for desktop/large screens */
+/* =========================
+   DESKTOP/LARGE SCREEN GLOW EFFECTS
+   ========================= */
 @media (min-width: 769px) {
     a:hover .header-name,
     a:focus .header-name {
@@ -799,6 +805,9 @@ footer p {
     font-size: clamp(1.1rem, 4vw, 2.2rem);
 }
 
+/* =========================
+   STYLISH FONT USAGE FOR "SHOP" BUTTONS
+   ========================= */
 .header-link.stylish-regular,
 .overlay-link.stylish-regular {
     font-family: "Stylish", sans-serif !important;

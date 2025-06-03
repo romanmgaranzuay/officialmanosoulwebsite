@@ -1,5 +1,6 @@
-/* Tour page specific styles */
-
+/* =========================
+   PAGE LAYOUT & STRUCTURE
+   ========================= */
 html, body {
     height: 100%;
     min-height: 100%;
@@ -11,6 +12,9 @@ body {
     flex-direction: column;
 }
 
+/* =========================
+   MAIN CONTENT STYLES
+   ========================= */
 main {
     max-width: 700px;
     margin: 6rem auto 2rem auto;
@@ -38,11 +42,15 @@ main p {
     transition: transform 0.2s cubic-bezier(.4,0,.2,1);
 }
 
+/* Grow effect on hover */
 main p:hover,
 main p:focus {
     transform: scale(1.08);
 }
 
+/* =========================
+   FOOTER STYLES
+   ========================= */
 footer {
     flex-shrink: 0;
     width: 100%;
@@ -59,7 +67,9 @@ footer {
     margin-top: auto;
 }
 
-/* Responsive adjustments */
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+   ========================= */
 @media (max-width: 768px) {
     main {
         padding: 1.2rem 0.5rem;
