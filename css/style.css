@@ -701,23 +701,18 @@ footer p {
     height: 8rem !important;
     max-width: 100vw;
 }
-@media (min-width: 769px) {
-    .overlay-menu.open .menu-home {
-        height: 8rem !important;
-    }
-}
 @media (max-width: 375px) {
     .overlay-menu.open .overlay-nav {
-        transform: scale(0.85);
+        transform: scale(0.92);
         gap: 1rem;
         margin-bottom: 1rem;
         }
     .overlay-menu.open .overlay-link {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .overlay-menu.open .menu-home {
         height: 5rem !important;
-        max-width: 60vw;
+        max-width: 80vw;
     }
     .overlay-menu.open .overlay-social {
         transform: scale(0.8);
