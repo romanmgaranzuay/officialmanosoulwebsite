@@ -66,8 +66,7 @@ footer {
     width: 100vw;
     max-width: none;
     gap: 0rem;
-    padding: 0.5rem 5rem 0rem 3rem;
-    margin-left: 3rem;
+    padding: 0.5rem 0rem 0rem 0rem;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -97,7 +96,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     height: 355px; /* Adjusted for card height */
     max-height: 550px;
 }
@@ -243,6 +243,7 @@ a > .video-play-icon {
         min-width: 400px;
         max-width: 400px;
         padding: 0rem 0rem;
+        scroll-snap-align: start;
     }
     .music-cover {
         max-width: 350px;
