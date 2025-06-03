@@ -44,11 +44,12 @@
         </a>
         <img src="img/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.svg" alt="Menu" class="menu-icon" id="menuIcon" />
         <div class="header-links">
-            <a href="/music.html" class="header-link">MUSIC</a>
-            <a href="/videos.html" class="header-link">VIDEOS</a>
-            <a href="/tour.html" class="header-link">TOUR</a>
-            <a href="/store.html" class="header-link">STORE</a>
-            <a href="/signup.html" class="header-link">SIGN UP</a>
+            <a href="/music" class="header-link">MUSIC</a>
+            <a href="/videos" class="header-link">VIDEOS</a>
+            <a href="/tour" class="header-link">TOUR</a>
+            <!-- Header SHOP button -->
+            <button type="button" class="header-link stylish-regular" id="desktopShopOverlayOpen">SHOP</button>
+            <a href="/signup" class="header-link">SIGN UP</a>
         </div>
         <div class="header-social">
             <a href="https://www.instagram.com/manosoul0/" target="_blank" aria-label="Instagram">
@@ -87,7 +88,8 @@
             <a href="/music" class="overlay-link">MUSIC</a>
             <a href="/videos" class="overlay-link">VIDEOS</a>
             <a href="/tour" class="overlay-link">TOUR</a>
-            <a href="/store" class="overlay-link">STORE</a>
+            <!-- Overlay SHOP button (mobile menu) -->
+            <button type="button" class="overlay-link stylish-regular" id="openShopOverlay" style="background:none;border:none;padding:0;margin:0;cursor:pointer;">SHOP &gt;</button>
             <a href="/signup" class="overlay-link">SIGN UP</a>
         </nav>
         <div class="overlay-social">
@@ -116,6 +118,24 @@
                 <i class="fa-brands fa-youtube"></i>
             </a>
         </div>
+    </div>
+    <!-- SHOP Overlay Menu (mobile) -->
+    <div id="shopOverlayMenu" class="overlay-menu shop-overlay-menu">
+        <button class="overlay-close" id="shopOverlayClose" aria-label="Close Shop Menu">&times;</button>
+        <nav class="overlay-nav">
+            <!-- Overlay SHOP back button (mobile shop overlay) -->
+            <button type="button" class="overlay-link stylish-regular" id="shopOverlayBack" style="background:none;border:none;padding:0;margin-bottom:2rem;cursor:pointer;text-align:left;">&lt; BACK</button>
+            <a href="https://manosoul.bandcamp.com/" target="_blank" class="overlay-link">ARTIST STORE</a>
+            <a href="https://www.beatstars.com/officialmanosoul" target="_blank" class="overlay-link">BUY BEATS</a>
+        </nav>
+    </div>
+    <!-- SHOP Overlay Menu (desktop) -->
+    <div id="desktopShopOverlayMenu" class="overlay-menu shop-overlay-menu">
+        <button class="overlay-close" id="desktopShopOverlayClose" aria-label="Close Shop Menu">&times;</button>
+        <nav class="overlay-nav">
+            <a href="https://manosoul.bandcamp.com/" target="_blank" class="overlay-link">ARTIST STORE</a>
+            <a href="https://www.beatstars.com/officialmanosoul" target="_blank" class="overlay-link">BUY BEATS</a>
+        </nav>
     </div>
     <section class="hero">
         <div class="hero-bg"></div>
@@ -192,30 +212,5 @@
         <p>&copy; 2025 Manosoul</p>
     </footer>
     <script src="js/main.js"></script>
-    <script>
-    // Toggle header background on scroll
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 20) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-
-    // Overlay menu open/close logic
-    document.getElementById('menuIcon').addEventListener('click', function() {
-        document.getElementById('overlayMenu').classList.add('open');
-    });
-    document.getElementById('overlayClose').addEventListener('click', function() {
-        document.getElementById('overlayMenu').classList.remove('open');
-    });
-    // Optional: close overlay when clicking a link
-    document.querySelectorAll('.overlay-link').forEach(function(link) {
-        link.addEventListener('click', function() {
-            document.getElementById('overlayMenu').classList.remove('open');
-        });
-    });
-    </script>
 </body>
 </html>

@@ -519,7 +519,7 @@ footer p {
     }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 875px) {
     .header-links {
         display: flex;
         left: 50%;
@@ -579,13 +579,19 @@ footer p {
     }
 }
 
-@media (min-width: 1141px) {
+@media (min-width: 875px) and (max-width: 1100px) {
+    .header-social {
+        right: -20rem;
+    }
+}
+
+@media (min-width: 1100px) {
     .header-name {
         left: 5rem;
     }
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 1100px) {
     .header-links {
         left: calc(100% - 2.5rem);
         transform: translate(-100%, -50%);
@@ -599,7 +605,7 @@ footer p {
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1100px) {
     .footer-icon {
         display: none; 
     }
@@ -611,16 +617,22 @@ footer p {
     z-index: 9999;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.97);
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s;
     opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition:
+        opacity 0.3s,
+        transform 0.4s cubic-bezier(.4,0,.2,1);
+    will-change: transform, opacity;
 }
 .overlay-menu.open {
-    display: flex;
     opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 .overlay-close {
     position: absolute;
@@ -678,46 +690,33 @@ footer p {
     text-shadow: 0 0 8px #fffc30, 0 0 16px #fffc30;
 }
 
-/* Hide overlay menu on large screens */
-@media (min-width: 1080px) {
-    .overlay-menu {
-        display: none !important;
-    }
+/* SHOP Overlay Menu (slides in from right) */
+.shop-overlay-menu {
+    right: 0;
+    left: auto;
+    width: 80vw;
+    max-width: 320px;
+    min-width: 200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition:
+        opacity 0.3s,
+        transform 0.4s cubic-bezier(.4,0,.2,1);
 }
-@media (min-width: 769px) {
-    .overlay-header-name-link .menu-home {
-        left: 2rem;
-        height: 6rem;
-    }
-}
-@media (min-width: 1141px) {
-    .overlay-header-name-link .menu-home {
-        left: 5rem;
-    }
+.shop-overlay-menu.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 
-/* Make the overlay menu logo smaller when menu is open */
-.overlay-menu.open .menu-home {
-    height: 8rem !important;
-    max-width: 100vw;
+/* Ensure overlay-close and overlay-nav look correct in shop overlay */
+.shop-overlay-menu .overlay-close {
+    /* ...existing styles... */
 }
-@media (max-width: 375px) {
-    .overlay-menu.open .overlay-nav {
-        transform: scale(0.92);
-        gap: 1rem;
-        margin-bottom: 1rem;
-        }
-    .overlay-menu.open .overlay-link {
-        font-size: 2rem;
-    }
-    .overlay-menu.open .menu-home {
-        height: 5rem !important;
-        max-width: 80vw;
-    }
-    .overlay-menu.open .overlay-social {
-        transform: scale(0.8);
-        gap: 0.5rem;
-    }
+.shop-overlay-menu .overlay-nav {
+    /* ...existing styles... */
 }
 
 /* Add glow effects back for desktop/large screens */
@@ -772,4 +771,48 @@ footer p {
     .listenon-links a[href*="amazon"] img:hover {
         filter: drop-shadow(0 0 12px #006eff) drop-shadow(0 0 24px #006eff);
     }
+}
+
+/* =========================
+   CLAMP SCALES
+   ========================= */
+.menu-home {
+    /* Gradually scales between 3rem and 8rem depending on viewport width */
+    height: clamp(4.5rem, 18vw, 8rem);
+    max-width: 100vw;
+    transition: height 0.3s, max-width 0.3s;
+}
+
+.overlay-link {
+    /* Gradually scales between 1.2rem and 2.2rem */
+    font-size: clamp(1.2rem, 6vw, 2.2rem);
+    /* ...existing styles... */
+}
+
+.overlay-nav {
+    gap: clamp(0.7rem, 3vw, 1.5rem);
+    margin-bottom: clamp(1rem, 5vw, 2.5rem);
+}
+
+/* Social icon clamp scales */
+.overlay-social a {
+    font-size: clamp(1.1rem, 4vw, 2.2rem);
+}
+
+.header-link.stylish-regular,
+.overlay-link.stylish-regular {
+    font-family: "Stylish", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+#desktopShopOverlayOpen {
+    font-family: "Stylish", sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+}
+#openShopOverlay {
+    font-family: "Stylish", sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
 }
