@@ -20,15 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateArrows() {
-        leftBtn.disabled = currentIndex === 0;
-        rightBtn.disabled = currentIndex === cards.length - 1;
+        leftBtn.disabled = false;
+        rightBtn.disabled = false;
     }
 
     leftBtn.addEventListener('click', () => {
-        if (currentIndex > 0) scrollToCard(currentIndex - 1);
+        if (currentIndex > 0) {
+            scrollToCard(currentIndex - 1);
+        } else {
+            // If at the start, go to the last card
+            scrollToCard(cards.length - 1);
+        }
     });
     rightBtn.addEventListener('click', () => {
-        if (currentIndex < cards.length - 1) scrollToCard(currentIndex + 1);
+        if (currentIndex < cards.length - 1) {
+            scrollToCard(currentIndex + 1);
+        } else {
+            // If at the end, go to the first card
+            scrollToCard(0);
+        }
     });
 
     scrollContainer.addEventListener('scroll', () => {

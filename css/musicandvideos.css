@@ -263,6 +263,7 @@ a > .video-play-icon {
     }
     .music-arrow {
         font-size: 5rem;/* Hide arrows on larger screens */
+        color: black;
     }
     .music-arrows-row {
         margin-top: -2.5rem; /* Hide arrows on larger screens */
