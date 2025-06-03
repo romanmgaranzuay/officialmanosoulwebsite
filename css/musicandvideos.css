@@ -98,7 +98,7 @@ footer {
     align-items: center;
     scroll-snap-align: start;
     height: 360px; /* Adjusted for card height */
-    max-height: 400px;
+    max-height: 450px;
 }
 
 .music-cover {
